@@ -21,6 +21,10 @@ public class UsuarioDomain implements Serializable {
     @Column(name = "CHAVE_ACESSO", unique = true, nullable = false)
     private String chaveAcesso;
 
+    // TODO -- Criar tabela para gerenciar geração de chaves de acesso
+    @Column(name = "CODIGO_ALTERACAO_RECUPERACAO_CHAVE_ACESSO", unique = true)
+    private String codigoAlteracaoRecuperacaoChave;
+
     public UsuarioDomain() { }
 
     public UsuarioDomain(String codigoPessoa, String identificador, String chaveAcesso) {
@@ -59,6 +63,14 @@ public class UsuarioDomain implements Serializable {
 
     public void setChaveAcesso(String chaveAcesso) {
         this.chaveAcesso = chaveAcesso;
+    }
+
+    public String getCodigoAlteracaoRecuperacaoChave() {
+        return codigoAlteracaoRecuperacaoChave;
+    }
+
+    public void setCodigoAlteracaoRecuperacaoChave(String codigoAlteracaoRecuperacaoChave) {
+        this.codigoAlteracaoRecuperacaoChave = codigoAlteracaoRecuperacaoChave;
     }
 
 }
