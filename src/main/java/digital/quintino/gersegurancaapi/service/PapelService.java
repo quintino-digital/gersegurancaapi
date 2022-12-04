@@ -5,6 +5,8 @@ import digital.quintino.gersegurancaapi.repository.PapelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PapelService {
 
@@ -13,6 +15,10 @@ public class PapelService {
 
     public PapelDomain saveOne(PapelDomain papelDomain) {
         return this.papelRepository.save(papelDomain);
+    }
+
+    public List<PapelDomain> findAll() {
+        return this.papelRepository.findAll();
     }
 
 }
