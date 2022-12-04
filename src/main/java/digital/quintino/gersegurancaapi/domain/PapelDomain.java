@@ -8,17 +8,22 @@ import java.io.Serializable;
 public class PapelDomain implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "CODIGO", unique = true, nullable = false)
     private Long codigo;
 
-    @Column(name = "NOME", unique = true, nullable = false)
+    @Column(name = "NOME", nullable = false)
     private String nome;
 
-    @Column(name = "DESCRICAO", unique = true, nullable = false)
+    @Column(name = "DESCRICAO", nullable = false)
     private String descricao;
 
     public PapelDomain() { }
+
+    public PapelDomain(String nome, String descricao) {
+        this.nome = nome;
+        this.descricao = descricao;
+    }
 
     public Long getCodigo() {
         return codigo;

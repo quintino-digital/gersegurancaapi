@@ -15,13 +15,19 @@ public class UsuarioDomain implements Serializable {
     @Column(name = "ID_PESSOA", unique = true, nullable = false)
     private String codigoPessoa;
 
-    @Column(name = "NOME", unique = true, nullable = false)
+    @Column(name = "IDENTIFICADOR", unique = true, nullable = false)
     private String identificador;
 
-    @Column(name = "DESCRICAO", unique = true, nullable = false)
+    @Column(name = "CHAVE_ACESSO", unique = true, nullable = false)
     private String chaveAcesso;
 
     public UsuarioDomain() { }
+
+    public UsuarioDomain(String codigoPessoa, String identificador, String chaveAcesso) {
+        this.codigoPessoa = codigoPessoa;
+        this.identificador = identificador;
+        this.chaveAcesso = chaveAcesso;
+    }
 
     public Long getCodigo() {
         return codigo;
