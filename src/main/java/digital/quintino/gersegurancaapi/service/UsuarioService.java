@@ -5,6 +5,8 @@ import digital.quintino.gersegurancaapi.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UsuarioService {
 
@@ -13,6 +15,10 @@ public class UsuarioService {
 
     public UsuarioDomain saveOne(UsuarioDomain usuarioDomain) {
         return this.usuarioRepository.save(usuarioDomain);
+    }
+
+    public List<UsuarioDomain> findAll() {
+        return this.usuarioRepository.findAll();
     }
 
 }
