@@ -17,6 +17,10 @@ public class UsuarioService {
         return this.usuarioRepository.save(usuarioDomain);
     }
 
+    public UsuarioDomain recuperarUsuario(String identificador) {
+        return this.usuarioRepository.findByIdentificador(identificador);
+    }
+
     public List<UsuarioDomain> findAll() {
         return this.usuarioRepository.findAll();
     }
